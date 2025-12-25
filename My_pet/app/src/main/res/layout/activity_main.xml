@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Игровые элементы (показываются во время игры) -->
+    <LinearLayout
+        android:id="@+id/gameLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/creatureImage"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:src="@drawable/norm"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/timeText"
+            android:textSize="28sp"
+            android:padding="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="30dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/feedButton"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="15"
+                android:layout_margin="8dp"
+                android:text="Накормить"
+                android:textSize="20sp"
+                android:backgroundTint="@color/light_pink" />
+
+            <Button
+                android:id="@+id/sleepButton"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="15"
+                android:layout_margin="8dp"
+                android:text="Спать"
+                android:textSize="20sp"
+                android:backgroundTint="@color/light_blue" />
+
+            <Button
+                android:id="@+id/playButton"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="15"
+                android:layout_margin="8dp"
+                android:text="Играть"
+                android:textSize="20sp"
+                android:backgroundTint="@color/light_yellow" />
+        </LinearLayout>
+
+        <!-- Статы внизу в линию -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="18dp">
+
+            <TextView
+                android:id="@+id/hungerText"
+                android:textSize="24sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="15"
+                android:gravity="center"
+                android:text="Голод: 50" />
+
+            <TextView
+                android:id="@+id/tirednessText"
+                android:textSize="24sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="15"
+                android:gravity="center"
+                android:text="Усталость: 50" />
+
+            <TextView
+                android:id="@+id/boredomText"
+                android:textSize="24sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="15"
+                android:gravity="center"
+                android:text="Скука: 50" />
+
+            <TextView
+                android:id="@+id/happinessText"
+                android:textSize="24sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="15"
+                android:gravity="center"
+                android:text="Счастье: 50" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Экран смерти (скрыт по умолчанию) -->
+    <LinearLayout
+        android:id="@+id/deathScreenLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/deadImage"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:src="@drawable/dead"
+            android:layout_marginBottom="32dp" />
+
+        <TextView
+            android:id="@+id/deathMessageText"
+            android:text="Попробуйте снова!"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="32dp" />
+
+        <Button
+            android:id="@+id/restartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Возобновить игру"
+            android:textSize="24sp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:backgroundTint="@android:color/holo_purple" />
+    </LinearLayout>
+
+</LinearLayout>
